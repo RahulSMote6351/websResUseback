@@ -7,3 +7,18 @@ L.marker([19.8758, 75.3393])
   .addTo(map)
   .bindPopup("Chhtrapati Sambhajinagar, Maharashtra")
   .openPopup();
+
+const nav = document.querySelector("nav i");
+const ul = document.querySelector("ul");
+const one = document.querySelector("ul .one");
+
+nav.addEventListener("click", function () {
+  ul.style.display = "block";
+});
+
+one.addEventListener("click", function () {
+  ul.style.display = "none";
+});
+
+
+
