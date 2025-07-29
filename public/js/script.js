@@ -29,9 +29,10 @@ gsap.to(".img",{
 
 gsap.to(".img",{
   x:-10,
-  duration: 1,
+  duration: 2,
   delay:1,
-  opacity:1,  
+  opacity:1, 
+  rotate:-360 
 })
 
 
