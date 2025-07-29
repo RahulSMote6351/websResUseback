@@ -5,12 +5,11 @@ if(process.env.NODE_ENV != "production"){
 
 const express = require("express");
 const app = express();
-const port = 3000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const MongoUrl = process.env.DATABASE_URL;
-const PORTS = process.env.PORTS || 3000;
+const PORTS = process.env.PORT || 3000;
 
 async function main() {
     await mongoose.connect(MongoUrl);
