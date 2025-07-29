@@ -1,5 +1,6 @@
-const dotenv =  require("dotenv");
-dotenv.config();
+if(process.env.NODE_ENV != "production"){
+    require("dotenv").config();
+}
 
 
 const express = require("express");
@@ -7,13 +8,18 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const MongoUrl = process.env.DATABASE_URL || "";
+const MongoUrl = process.env.DATABASE_URL;
 const PORTS = process.env.PORT || 3000;
 
-mongoose.connect(MongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log("MongoDB connection error:", err.message));
+async function main() {
+    await mongoose.connect(MongoUrl || '');
+}
 
+main().then(()=>{
+    console.log("Connected to MongoDB");
+}).catch((e)=>{
+    console.log("Mongodb has one Problem")
+})
 
 app.set("view engine" ,"ejs");
 app.set("views", path.join(__dirname , "views"));
