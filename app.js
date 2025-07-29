@@ -10,15 +10,10 @@ const mongoose = require("mongoose");
 const MongoUrl = process.env.DATABASE_URL || "";
 const PORTS = process.env.PORT || 3000;
 
-async function main() {
-    await mongoose.connect(MongoUrl);
-}
+mongoose.connect(MongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log("MongoDB connection error:", err.message));
 
-main().then(()=>{
-    console.log("Connected to MongoDB");
-}).catch((e)=>{
-    console.log("Mongodb has one Problem")
-})
 
 app.set("view engine" ,"ejs");
 app.set("views", path.join(__dirname , "views"));
