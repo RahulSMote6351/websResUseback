@@ -1,6 +1,5 @@
-if(process.env.NODE_ENV != "production"){
-    require('dotenv').config();
-}
+const dotenv =  require("dotenv");
+dotenv.config();
 
 
 const express = require("express");
@@ -8,7 +7,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const MongoUrl = process.env.DATABASE_URL;
+const MongoUrl = process.env.DATABASE_URL || "";
 const PORTS = process.env.PORT || 3000;
 
 async function main() {
