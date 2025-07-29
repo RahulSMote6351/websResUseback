@@ -213,6 +213,32 @@ button:hover {
   background-color: black;
   color: white;
 }
+
+.footerpart{
+  width: 100%;
+  padding: 20px;
+  color: white;
+  background-color: rgb(61, 60, 60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+
+}
+.foocontainer{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  flex-direction: column;
+  line-height: 70px;
+}
+.foocontainer p span{
+  color: aqua;
+  text-decoration: underline;
+}
+
 @media (min-width: 550px) and (max-width: 1200px) {
   .mainsec {
     width: 80%;
@@ -285,4 +311,9 @@ button:hover {
     flex-direction: column;
     text-align: center;
   }
+  .foocontainer{
+    width: 100%;
+  }
 }
+
+
