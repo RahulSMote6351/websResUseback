@@ -20,5 +20,18 @@ one.addEventListener("click", function () {
   ul.style.display = "none";
 });
 
+gsap.to(".img",{
+  x:-300,
+  duration: 0,
+  delay:0,
+  opacity:0,  
+})
+
+gsap.to(".img",{
+  x:-10,
+  duration: 1,
+  delay:1,
+  opacity:1,  
+})
 
 
