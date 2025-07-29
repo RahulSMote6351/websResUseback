@@ -234,7 +234,7 @@ button:hover {
   flex-direction: column;
   line-height: 70px;
 }
-.foocontainer p span{
+.foocontainer p span a{
   color: aqua;
   text-decoration: underline;
 }
