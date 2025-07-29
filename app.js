@@ -1,12 +1,19 @@
+if(process.env.NODE_ENV != "production"){
+    require('dotenv').config();
+}
+
+
 const express = require("express");
 const app = express();
 const port = 3000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const MongoUrl = process.env.DATABASE_URL;
+const PORTS = process.env.PORTS || 3000;
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/practice")
+    await mongoose.connect(MongoUrl);
 }
 
 main().then(()=>{
@@ -25,6 +32,6 @@ app.use(bodyParser.json());
 
 app.use("/" ,require("./routes/user.js"));
 
-app.listen(port , ()=>{
-    console.log(`Server is running on port ${port}`);
+app.listen(PORTS , ()=>{
+    console.log(`Server is running on port ${PORTS}`);
 })
