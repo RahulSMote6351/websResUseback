@@ -241,13 +241,13 @@ button:hover {
 
 @media (min-width: 550px) and (max-width: 1200px) {
   .mainsec {
-    width: 80%;
+    max-width: 100%;
   }
   .leftsec {
-    width: 80%;
+    max-width: 80%;
   }
   .rightsec {
-    width: 80%;
+    max-width: 80%;
   }
   #map {
     width: 80%;

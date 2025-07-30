@@ -20,6 +20,11 @@ one.addEventListener("click", function () {
   ul.style.display = "none";
 });
 
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+} , false)
+
+
 gsap.to(".img",{
   x:-300,
   duration: 0,
@@ -34,5 +39,30 @@ gsap.to(".img",{
   opacity:1, 
   rotate:-360 
 })
+gsap.to(".leftsec , .items",{
+  x:-300,
+  duration: 0,
+  delay:0,
+  opacity:0,  
+})
+gsap.to(".leftsec , .items",{
+  x:-20,
+  duration: 2,
+  delay:1,
+  opacity:1, 
+})
+gsap.to(".rightsec , .right",{
+  x:300,
+  duration: 0,
+  delay:0,
+  opacity:0,  
+})
+gsap.to(".rightsec , .right",{
+  x:-20,
+  duration: 2,
+  delay:1,
+  opacity:1, 
+})
+
 
 
